@@ -2,6 +2,7 @@ const express = require ('express');
 const morgan = require ('morgan');
 const mongoose = require('mongoose');
 const path = require('path');
+const cors = require('cors');
 
 const app = express();
 const PORT = process.env.PORT || 8080;
@@ -21,10 +22,10 @@ mongoose.connection.on('connected', () => {
     console.log('Mongoose connection');
 });
 
-
+app.use(cors());
 app.use(morgan('tiny'));
 
-app.use('/seasonal', routes);
+app.use('/inseason', routes);
 
 app.listen(PORT, () => {
     console.log(`Listening on ${PORT}`)
