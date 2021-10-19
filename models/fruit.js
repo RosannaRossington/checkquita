@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 //Schema - sturcture of document
 const Schema = mongoose.Schema
@@ -11,4 +11,4 @@ const FruitSchema = new Schema({
 //Model - collection name
 const Fruit = mongoose.model('Fruit', FruitSchema)
 
-module.export = Fruit;
+export default Fruit

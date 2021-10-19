@@ -1,8 +1,9 @@
-const express = require ('express');
-const morgan = require ('morgan');
-const mongoose = require('mongoose');
-const path = require('path');
-const cors = require('cors');
+import express from 'express';
+import morgan from 'morgan';
+import mongoose from "mongoose";
+import path from 'path';
+import cors from 'cors';
+import routes from './routes/api.js'
 
 const app = express();
 const PORT = process.env.PORT || 8080;
@@ -10,7 +11,7 @@ const PORT = process.env.PORT || 8080;
 //use dot env to hide
 //const uri = 'mongodb+srv://Rossington:Potofgold18!@cluster0.hmjuw.mongodb.net/gettingStarted?retryWrites=true&w=majority'
 
-const routes = require('./routes/api')
+
 
 mongoose.connect('mongodb://localhost/testt', {
     useNewUrlParser: true,
@@ -28,6 +29,6 @@ app.use(morgan('tiny'));
 app.use('/inseason', routes);
 
 app.listen(PORT, () => {
-    console.log(`Listening on ${PORT}`)
+    console.log(`Listening on **** ${PORT} *****`)
 })
 
