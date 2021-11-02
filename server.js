@@ -9,11 +9,12 @@ const app = express();
 const PORT = process.env.PORT || 8080;
 
 //use dot env to hide
-//const uri = 'mongodb+srv://Rossington:Potofgold18!@cluster0.hmjuw.mongodb.net/gettingStarted?retryWrites=true&w=majority'
+const uri = 'mongodb+srv://Rossington:Potofgold18!@cluster0.hmjuw.mongodb.net/gettingStarted?retryWrites=true&w=majority'
 
 
 
-mongoose.connect('mongodb://localhost/testt', {
+// mongoose.connect('mongodb://localhost/testt', {
+mongoose.connect(uri, { 
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
